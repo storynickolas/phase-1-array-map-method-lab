@@ -12,5 +12,16 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  let newList = []
+  tutorials.map(title => newList.push(sort(title)))
+  return newList
 }
+
+
+const sort = (list) => {
+  let words = list.split(' ');
+  words = words.map(word => word.charAt(0).toUpperCase() + word.substring(1));
+  return words.join(' ')
+}
+
+console.log(titleCased())
